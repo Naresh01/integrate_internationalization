@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+  <title>Internationalization demo</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="MainController">
+    <div class="container">       
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="app.populations">Populations</a></li>
+        </ul>
+		<section class="margin-bottom-20" style="display: -webkit-inline-box; float: right; padding-top: 8px;">      
+		  <select class="form-control" ng-change="translate()" ng-model="selectedLanguage">
+			<option value="en">English</option>
+			<option value="no">Norsk</option>
+		  </select>
+		</section>
+      </div>
+	  
+    </div>
+	
+  </div>
+
+  <div class="container">
+    <div ui-view></div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>  
+  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+  <script src="http://code.angularjs.org/1.2.14/angular-resource.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/main-controller.js"></script>
+  <script src="scripts/services/translationService.js"></script>
+</body>
+
+</html>
